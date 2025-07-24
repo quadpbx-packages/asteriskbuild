@@ -194,6 +194,7 @@ execute_after_dh_auto_install:
 	$(RM) -f debian/tmp/usr/sbin/stereorize
 	$(RM) -f debian/tmp/usr/sbin/hashtest*
 	$(RM) -f debian/tmp/usr/sbin/refcounter
+	touch debian/tmp/etc/.ast-config-blank  # Used for asterisk-config-blank package
 
 execute_after_dh_install-arch:
 	extra_packs=$$(find $(SUBPACKS_EXTRA_DIRS_MOD) -name '*.so' -printf '%f\n');\

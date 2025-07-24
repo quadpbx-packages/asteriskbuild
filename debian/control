@@ -302,9 +302,9 @@ Depends:
 Recommends:
  asterisk,
 Conflicts:
- asterisk-config-custom,
+ asterisk-config-custom, asterisk-config-blank
 Replaces:
- asterisk-config-custom,
+ asterisk-config-custom, asterisk-config-blank
 Architecture: all
 Description: Configuration files for Asterisk
  Asterisk is an Open Source PBX and telephony toolkit.
@@ -313,3 +313,21 @@ Description: Configuration files for Asterisk
  .
  With program asterisk-config-custom in the asterisk package,
  you can create an asterisk-config replacement package.
+
+Package: asterisk-config-blank
+Depends:
+ ${misc:Depends},
+Recommends:
+ asterisk,
+Conflicts:
+ asterisk-config-custom, asterisk-config
+Replaces:
+ asterisk-config-custom, asterisk-config
+Architecture: all
+Description: Blank configuration for Asterisk
+ This is a shim package to remove all existing config files provided by Asterisk.
+ .
+ It is designed for use with QuadPBX and simiar things, that completely control Asterisk.
+ .
+ If you install this on a working system, your config will be removed.
+

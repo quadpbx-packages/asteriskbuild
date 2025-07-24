@@ -1,0 +1,4 @@
+# A file that can be checked to make sure the package
+# is installed, without ACTUALLY needing to ask the
+# package manager
+etc/.ast-config-blank
