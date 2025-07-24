@@ -8,6 +8,8 @@ else
 ABUILDROOT ?= $(ASTROOT)/build
 endif
 
+# Note that after ast20, app_macro and chan_sip is permanently removed.
+# It may be needed to go back to 20.15.0 temporarily
 ASTVER ?= 22.5.0
 ASTBUILDNUM ?= 1
 ASTFILE=asterisk-$(ASTVER).tar.gz
@@ -172,8 +174,8 @@ $(ABUILDROOT)/spandsp_3.0.0.orig.tar.gz: $(ASTROOT)/src/$(SPDSPFILE) | $(ABUILDR
 $(ASTROOT)/src/$(SPDSPFILE):
 	mkdir -p $(@D) && wget $(SPDSPURL) -O $@
 
-.PHONY: docker
-docker: $(ASTROOT)/.spandspbuild $(ASTROOT)/.astbuild
+.PHONY: astdocker
+astdocker: $(ASTROOT)/.spandspbuild $(ASTROOT)/.astbuild
 
 DPATCHDEB=dpatch_2.0.41_all.deb
 DPATCHSRC=http://ftp.au.debian.org/debian/pool/main/d/dpatch/$(DPATCHDEB)

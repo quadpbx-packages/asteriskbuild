@@ -22,7 +22,7 @@ Build-Depends:
  libavcodec-dev,
  libavdevice-dev,
  libbluetooth-dev [linux-any],
- libc-client2007e-dev,
+# libc-client2007e-dev, # No longer used, was used for imap voicemail
  libcap-dev [linux-any],
  libcodec2-dev,
  libcurl4-openssl-dev,

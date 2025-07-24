@@ -124,7 +124,7 @@ override_dh_auto_configure:
                 --prefix=/usr                           \
                 --mandir=\$${prefix}/share/man          \
                 --infodir=\$${prefix}/share/info        \
-                --with-imap=system                      \
+                --without-imap                          \
                 $(if $(EXP_RELEASE),,--without-sdl) \
                 ${ENABLE_DEBUG} || { cat config.log; exit 1; }
 
