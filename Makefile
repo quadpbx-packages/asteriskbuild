@@ -1,3 +1,4 @@
+SHELL=/bin/bash
 # If this is set, we've been included. Otherwise, $shell pwd is fine.
 ASTROOT ?= $(shell pwd)
 
@@ -13,17 +14,22 @@ ASTFILE=asterisk-$(ASTVER).tar.gz
 ASTURL=http://downloads.asterisk.org/pub/telephony/asterisk/releases/$(ASTFILE)
 ASTDEST=$(ASTROOT)/src/asterisk-$(ASTVER)
 ASTBUILD=$(ASTROOT)/astbuild
-#SPDSPCOMMIT=e08c74db3f0
-#SPDSPCOMMIT=9c42d580d97f
-SPDSPCOMMIT=530d58364fff
-# This is what is in debian/changelog.
+
+# Spandsp is maintained by Freeswitch/Signalwire
+#
+# First release of spandsp that supports trixie
+SPDSPCOMMIT=79776016
+# This is the version in debian/changelog.
 SPDSPVERS=3.0.0
+# It's currently 42 - increment it by one.
 SPDSPREL=43
+
 SPDSPBUILD=$(SPDSPVERS)-$(SPDSPREL)
 SPDSPDEBNAME=libspandsp3_$(SPDSPBUILD)_amd64.deb
 SPDSPDEB=$(ABUILDROOT)/$(SPDSPDEBNAME)
 SPDSPFILE=$(SPDSPCOMMIT).tar.gz
-SPDSPURL=https://github.com/phonebocx/spandsp/archive/$(SPDSPFILE)
+# Use proper source repo
+SPDSPURL=https://github.com/freeswitch/spandsp/archive/$(SPDSPFILE)
 SPDSPDEST=$(ASTROOT)/src/spandsp-$(SPDSPCOMMIT)
 
 FLITECOMMIT=569b2f0101
