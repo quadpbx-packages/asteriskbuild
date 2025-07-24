@@ -11,7 +11,7 @@ endif
 # Note that after ast20, app_macro and chan_sip is permanently removed.
 # It may be needed to go back to 20.15.0 temporarily
 ASTVER ?= 22.5.0
-ASTBUILDNUM ?= 1
+ASTBUILDNUM ?= 2
 ASTFILE=asterisk-$(ASTVER).tar.gz
 ASTURL=http://downloads.asterisk.org/pub/telephony/asterisk/releases/$(ASTFILE)
 ASTDEST=$(ASTROOT)/src/asterisk-$(ASTVER)

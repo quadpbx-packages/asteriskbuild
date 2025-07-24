@@ -87,7 +87,7 @@ Package: asterisk
 Architecture: any
 Depends:
  adduser,
- asterisk-config (= ${source:Version}) | asterisk-config-custom,
+ asterisk-config (= ${source:Version}) | asterisk-config-custom | asterisk-config-blank,
  asterisk-core-sounds-en,
  asterisk-modules (= ${binary:Version}),
  ${misc:Depends},
@@ -100,11 +100,11 @@ Recommends:
  asterisk-moh-opsound-gsm,
  sox,
 Suggests:
- asterisk-dahdi,
- asterisk-dev,
  asterisk-doc,
- asterisk-ooh323,
  asterisk-opus,
+# asterisk-dahdi,
+# asterisk-dev,
+# asterisk-ooh323,
 Description: Open Source Private Branch Exchange (PBX)
  Asterisk is an Open Source PBX and telephony toolkit.
  It is, in a sense, middleware
